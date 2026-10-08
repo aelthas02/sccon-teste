@@ -8,7 +8,10 @@ main {
 
   .content {
     width: 100%;
-    margin: styles.$md;
+
+    .main-card {
+      margin: styles.$md;
+    }
   }
 
   .header {

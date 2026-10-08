@@ -1,6 +1,6 @@
 <div class="table-wrapper">
   @if(addressList().length > 0){
-  <table mat-table [dataSource]="addressList()" class="mat-shadow-2">
+  <table mat-table [dataSource]="addressList()" class="mat-shadow-2 list-content-open">
     <ng-container matColumnDef="cep">
       <th mat-header-cell *matHeaderCellDef> CEP </th>
       <td mat-cell *matCellDef="let element"> {{element.cep}} </td>
@@ -28,7 +28,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   } @else {
-  <div class="empty-state-wrapper">
+  <div class="empty-state-wrapper  list-content-open">
     <span class="title">Sem registro</span>
   </div>
   }
