@@ -20,12 +20,7 @@ export class CepSearchService implements CepSearchRepository {
   public search(cep: string): Observable<Address> {
     this._loading.set(true);
     return this.http.get<AddressResponse>(`${this.url}/${cep}/json/`).pipe(
-      map(response => {
-        const address: Address = this.setAddressFormat(response);
-        this._addressList.update(list => [...list, address]);
-        this._loading.set(false);
-        return address;
-      }),
+      map(response => this.handleAddressResponse(response)),
       catchError(() => {
         this._loading.set(false);
         return throwError(() => console.log('Erro inesperado.'));
@@ -37,6 +32,15 @@ export class CepSearchService implements CepSearchRepository {
     this._addressList.update(list => list.filter(address => address.id !== id));
   }
 
+
+  private handleAddressResponse(response: AddressResponse): Address {
+    const address: Address = this.setAddressFormat(response);
+    if (!response['erro']) {
+      this._addressList.update(list => [...list, address]);
+    }
+    this._loading.set(false);
+    return address;
+  }
 
   private setAddressFormat(address: AddressResponse): Address {
     return {

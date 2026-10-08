@@ -1,7 +1,7 @@
 <mat-toolbar-row>
   <div class="logo-menu">
 
-    <img src="/assets/img/logo_sccon.svg" alt="logo" width="250" height="77" aria-label="'logo sccon'">
+    <img src="/assets/img/logo_sccon.svg" alt="logo" class="logo" aria-label="logo sccon">
 
     <div class="menu">
       <div>
@@ -10,6 +10,20 @@
       <div>
         <button class="button" matButton="outlined" (click)="goSearch()">Endereços</button>
       </div>
+
+      <button matIconButton>
+        <mat-icon class="menu-icon" (click)="toggleMenu()">menu</mat-icon>
+      </button>
     </div>
   </div>
+  @if(showMenu){
+  <div class="mobile-menu">
+    <div class="mobile-menu-button">
+      <button matButton class="button" (click)="goHome()">Home</button>
+    </div>
+    <div class="mobile-menu-button">
+      <button matButton class="button" (click)="goSearch()">Endereços</button>
+    </div>
+  </div>
+  }
 </mat-toolbar-row>

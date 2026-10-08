@@ -13,6 +13,9 @@ export interface AddressResponse {
   uf: string;
   unidade: string;
 }
+export interface AddressResponse {
+  erro: string;
+}
 
 export interface Address {
   id: string;

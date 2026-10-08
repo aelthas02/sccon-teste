@@ -1,4 +1,4 @@
-@use '../../../../styles.scss' as styles;
+@use '../../../../../styles.scss' as styles;
 
 .empty-state-wrapper {
   display: flex;
@@ -19,4 +19,8 @@
 
 .button {
   color: styles.$dark-blue;
+}
+
+.table-wrapper {
+  overflow-x: auto;
 }

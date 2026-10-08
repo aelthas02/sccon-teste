@@ -3,5 +3,5 @@
     <input matInput placeholder="Busca por CEP:" formControlName="cep" cepMask>
   </mat-form-field>
 
-  <button class="button" matButton="outlined" [disabled]="loading()">Buscar</button>
+  <button class="button" matButton="outlined" [disabled]="loading() || searchForm.invalid">Buscar</button>
 </form>

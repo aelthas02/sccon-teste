@@ -3,11 +3,11 @@ import { MatInputModule } from '@angular/material/input';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
-import { CepMaskDirective } from '../../../directives/cep-mask';
-import { CepSearchService } from '../../../facades/data-access/cep-search.service';
-import { CEP_SEARCH_REPOSITORY } from '../../../facades/repositories/cep-search.repository';
+import { CepMaskDirective } from '../../../../directives/cep-mask';
+import { CepSearchService } from '../../../../facades/data-access/cep-search.service';
+import { CEP_SEARCH_REPOSITORY } from '../../../../facades/repositories/cep-search.repository';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Address } from '../../../facades/models/address.model';
+import { Address } from '../../../../facades/models/address.model';
 @Component({
   imports: [
     CommonModule,
@@ -29,7 +29,7 @@ export class Search {
   public addressList: Signal<Address[]> = this.cepSearchRepository.addressList;
 
   public searchForm = new FormGroup({
-    cep: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    cep: new FormControl('', [Validators.required, Validators.minLength(9)]),
   });
 
   public search(): void {

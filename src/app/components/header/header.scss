@@ -7,6 +7,16 @@
   padding: 15px;
   gap: styles.$md;
 
+  .logo {
+    width: 250px;
+    height: 77px;
+
+    @media (max-width: 1023px) {
+      width: 180px;
+      height: 56px;
+    }
+  }
+
   .menu {
     background-color: styles.$dark-blue;
     display: flex;
@@ -16,7 +26,55 @@
     gap: 15px;
     border-radius: styles.$sm;
 
+    @media (max-width: 1023px) {
+      width: fit-content;
+      justify-self: end;
+      gap: unset;
+    }
+
     .button {
+      background-color: styles.$light-grey;
+      color: styles.$dark-blue;
+      transition: filter 1s ease;
+
+      @media (max-width: 1023px) {
+        display: none;
+      }
+    }
+
+
+    .button:hover {
+      filter: brightness(0.94);
+    }
+
+    .menu-icon {
+      display: none;
+      color: styles.$light-grey;
+
+      @media (max-width: 1023px) {
+        display: block;
+      }
+    }
+  }
+
+}
+
+.mobile-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: styles.$sm;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+
+  .mobile-menu-button {
+
+
+    .button {
+      width: 100%;
       background-color: styles.$light-grey;
       color: styles.$dark-blue;
       transition: filter 1s ease;

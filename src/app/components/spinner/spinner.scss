@@ -1,0 +1,66 @@
+@use '../../../styles.scss' as styles;
+
+.spinner-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .spinner {
+    border: solid 2px;
+    border-radius: 3px;
+    animation: rotate 2s infinite linear;
+    position: absolute;
+    border-color: styles.$light-grey;
+    width: 55px;
+    height: 55px;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+
+    25% {
+      transform: rotateX(180deg);
+    }
+
+    50% {
+      transform: rotate(180);
+    }
+
+    75% {
+      transform: rotateY(180deg);
+    }
+
+    100% {
+      transform: rotate(0);
+    }
+  }
+
+  .inner-spinner {
+    border: solid 2px;
+    border-radius: 100px;
+    border-style: dashed;
+    animation: rotate-center 2s infinite linear;
+    position: absolute;
+    border-color: styles.$light-grey;
+    width: 25px;
+    height: 25px;
+  }
+
+  @keyframes rotate-center {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

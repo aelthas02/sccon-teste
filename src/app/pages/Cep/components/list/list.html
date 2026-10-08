@@ -1,4 +1,4 @@
-<div>
+<div class="table-wrapper">
   @if(addressList().length > 0){
   <table mat-table [dataSource]="addressList()" class="mat-shadow-2">
     <ng-container matColumnDef="cep">
@@ -13,7 +13,7 @@
 
     <ng-container matColumnDef="data">
       <th mat-header-cell *matHeaderCellDef> Data </th>
-      <td mat-cell *matCellDef="let element"> {{element.data | date: 'dd/MM/yyyy - HH:mm:ss'}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.data | date: 'dd/MM/yyyy - HH:mm'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="id">

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { List } from '../list/list';
-import { Search } from '../search/search';
+import { List } from './components/list/list';
+import { Search } from './components/search/search';
 import { MatCardContent, MatCardHeader, MatCardModule } from '@angular/material/card';
 
 @Component({
