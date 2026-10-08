@@ -1,9 +1,15 @@
+@use '../styles.scss' as styles;
+
 main {
   display: flex;
   justify-self: center;
   max-width: 1024px;
   width: 100%;
-  padding: 20px;
+
+  .content {
+    width: 100%;
+    margin: styles.$md;
+  }
 
   .header {
     width: 100%;

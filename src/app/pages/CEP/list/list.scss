@@ -1,0 +1,22 @@
+@use '../../../../styles.scss' as styles;
+
+.empty-state-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  height: 400px;
+
+  .title {
+    color: styles.$dark-blue;
+    font-weight: bold;
+    font-style: italic;
+    font-size: styles.$lg;
+  }
+
+}
+
+.button {
+  color: styles.$dark-blue;
+}

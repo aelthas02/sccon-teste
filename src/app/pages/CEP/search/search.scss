@@ -1,11 +1,19 @@
+@use '../../../../styles.scss' as styles;
+
 .form {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: styles.$md;
   width: 100%;
   align-items: center;
 
   .input {
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .button {
+    color: styles.$dark-blue;
+    margin-bottom: styles.$md;
   }
 }

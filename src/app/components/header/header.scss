@@ -5,7 +5,7 @@
   grid-template-columns: 1fr 2fr;
   align-items: center;
   padding: 15px;
-
+  gap: styles.$md;
 
   .menu {
     background-color: styles.$dark-blue;
@@ -14,9 +14,11 @@
     align-items: center;
     padding: 0px 15px;
     gap: 15px;
+    border-radius: styles.$sm;
 
     .button {
       background-color: styles.$light-grey;
+      color: styles.$dark-blue;
       transition: filter 1s ease;
     }
 

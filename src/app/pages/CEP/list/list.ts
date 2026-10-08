@@ -1,9 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
+import { CEP_SEARCH_REPOSITORY } from '../../../facades/repositories/cep-search.repository';
+import { Address } from '../../../facades/models/address.model';
+import { MatTableModule } from '@angular/material/table';
+import { CommonModule, DatePipe } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  imports: [],
+  imports: [
+    CommonModule,
+    DatePipe,
+    MatTableModule,
+    MatButtonModule
+  ],
   selector: 'app-list',
   styleUrl: './list.scss',
   templateUrl: './list.html',
 })
-export class List { }
+export class List {
+  private readonly cepSearchRepository = inject(CEP_SEARCH_REPOSITORY);
+
+  public addressList: Signal<Address[]> = this.cepSearchRepository.addressList;
+
+  public displayedColumns: string[] = ['cep', 'endereco', 'data', 'id'];
+
+  public removeAddress(id: string): void {
+    this.cepSearchRepository.removeAddress(id);
+  }
+}
