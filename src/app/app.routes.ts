@@ -7,6 +7,6 @@ export const routes: Routes = [
   },
   {
     path: 'enderecos',
-    loadComponent: () => import('./pages/CEP/search/search').then(c => c.Search)
+    loadComponent: () => import('./pages/CEP/cep/cep').then(c => c.Cep)
   },
 ];

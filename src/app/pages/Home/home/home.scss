@@ -1,0 +1,22 @@
+@use '../../../../styles.scss' as style;
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  height: 400px;
+
+  .title {
+    color: style.$dark-blue;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 24px;
+  }
+
+  .desc {
+    font-style: italic;
+    font-size: 14px;
+  }
+}

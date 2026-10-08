@@ -1,0 +1,15 @@
+@use '../../../../styles.scss' as styles;
+
+section {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+}
+
+.title {
+  font-style: italic;
+  font-size: 24px;
+  color: styles.$dark-blue;
+  margin-left: 12px;
+}
