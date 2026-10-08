@@ -2,14 +2,21 @@
 
 .form {
   display: flex;
-  justify-content: center;
-  gap: styles.$md;
+  flex-direction: column;
+  text-align: center;
   width: 100%;
-  align-items: center;
 
-  .input {
-    max-width: 500px;
+  .input-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: styles.$md;
     width: 100%;
+
+    .input {
+      max-width: 500px;
+      width: 100%;
+    }
   }
 
   .button {

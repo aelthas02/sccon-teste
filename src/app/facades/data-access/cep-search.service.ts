@@ -12,6 +12,9 @@ export class CepSearchService implements CepSearchRepository {
   public _loading: WritableSignal<boolean> = signal<boolean>(false);
   public loading: Signal<boolean> = this._loading.asReadonly();
 
+  public _error: WritableSignal<boolean> = signal<boolean>(false);
+  public error: Signal<boolean> = this._error.asReadonly();
+
   private _addressList: WritableSignal<Address[]> = signal<Address[]>([]);
   public addressList: Signal<Address[]> = this._addressList.asReadonly();
 
@@ -23,9 +26,14 @@ export class CepSearchService implements CepSearchRepository {
       map(response => this.handleAddressResponse(response)),
       catchError(() => {
         this._loading.set(false);
+        this._error.set(true);
         return throwError(() => console.log('Erro inesperado.'));
       })
     );
+  }
+
+  public setErrorSignal(active: boolean): void {
+    this._error.set(active);
   }
 
   public removeAddress(id: string): void {
@@ -37,6 +45,8 @@ export class CepSearchService implements CepSearchRepository {
     const address: Address = this.setAddressFormat(response);
     if (!response['erro']) {
       this._addressList.update(list => [...list, address]);
+    } else {
+      this._error.set(true);
     }
     this._loading.set(false);
     return address;
