@@ -1,6 +1,6 @@
-<form class="form">
+<form [formGroup]="searchForm" class="form" (ngSubmit)="search()">
   <mat-form-field class="input">
-    <input matInput placeholder="Busca por CEP:">
+    <input matInput placeholder="Busca por CEP:" formControlName="cep" cepMask>
   </mat-form-field>
 
   <button class="button" matButton="outlined">Buscar</button>
