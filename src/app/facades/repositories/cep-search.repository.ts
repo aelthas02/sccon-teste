@@ -9,6 +9,7 @@ export interface CepSearchRepository {
   search(cep: string): Observable<Address>;
   removeAddress(cep: string): void;
   setErrorSignal(active: boolean): void;
+  getAddressList(): void;
 }
 
 export const CEP_SEARCH_REPOSITORY = new InjectionToken<CepSearchRepository>('CEP_SEARCH_REPOSITORY');

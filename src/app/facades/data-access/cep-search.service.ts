@@ -1,13 +1,14 @@
-import { inject, Service, Signal, signal, WritableSignal } from '@angular/core';
+import { inject, PLATFORM_ID, Service, Signal, signal, WritableSignal } from '@angular/core';
 import { CepSearchRepository } from '../repositories/cep-search.repository';
 import { Address, AddressResponse } from '../models/address.model';
 import { catchError, map, Observable, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { randomUUID } from 'crypto';
+import { isPlatformBrowser } from '@angular/common';
 
 @Service()
 export class CepSearchService implements CepSearchRepository {
   private readonly http = inject(HttpClient);
+  private readonly platformId = inject(PLATFORM_ID);
 
   public _loading: WritableSignal<boolean> = signal<boolean>(false);
   public loading: Signal<boolean> = this._loading.asReadonly();
@@ -38,6 +39,7 @@ export class CepSearchService implements CepSearchRepository {
 
   public removeAddress(id: string): void {
     this._addressList.update(list => list.filter(address => address.id !== id));
+    this.addAddress();
   }
 
 
@@ -45,9 +47,11 @@ export class CepSearchService implements CepSearchRepository {
     const address: Address = this.setAddressFormat(response);
     if (!response['erro']) {
       this._addressList.update(list => [...list, address]);
+      this.addAddress();
     } else {
       this._error.set(true);
     }
+    this.getAddressList();
     this._loading.set(false);
     return address;
   }
@@ -59,6 +63,23 @@ export class CepSearchService implements CepSearchRepository {
       endereco: `${address.logradouro}, ${address.localidade} - ${address.uf}`,
       data: new Date
     }
+  }
+
+  private addAddress(): void {
+    const value: string = JSON.stringify(this.addressList());
+    localStorage.setItem('address', value);
+    this.getAddressList();
+  }
+
+  public getAddressList(): void {
+    this._loading.set(true);
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+    const storage: string = localStorage.getItem('address') ?? ''
+    const values = JSON.parse(storage);
+    this._addressList.set(values);
+    this._loading.set(false);
   }
 
 }

@@ -23,6 +23,10 @@ export class List {
 
   public displayedColumns: string[] = ['cep', 'endereco', 'data', 'id'];
 
+  constructor() {
+    this.cepSearchRepository.getAddressList();
+  }
+
   public removeAddress(id: string): void {
     this.cepSearchRepository.removeAddress(id);
   }
