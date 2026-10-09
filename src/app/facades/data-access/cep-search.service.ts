@@ -74,9 +74,14 @@ export class CepSearchService implements CepSearchRepository {
   public getAddressList(): void {
     this._loading.set(true);
     if (!isPlatformBrowser(this.platformId)) {
+      this._loading.set(false);
       return;
     }
     const storage: string = localStorage.getItem('address') ?? ''
+    if (storage === '') {
+      this._loading.set(false);
+      return;
+    }
     const values = JSON.parse(storage);
     this._addressList.set(values);
     this._loading.set(false);

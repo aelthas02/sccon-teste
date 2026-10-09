@@ -18,8 +18,18 @@ ng serve
 ```
 Depois que executar de forma coreta, abra seu navegador em `http://localhost:4200/`.
 
+## Para atualizar o código hospedado
+
+Basta realizar o commit e push das alterações para o repositório no GitHub e a aplicação automaticamente entrará na pipeline da Vercel disponibilizando a versão mais atualizada.
 
 ## Projeto hospedado 
 
-Este projeto foi hospedado na rede usando serviços da Vercel e você pode acessar por [aqui]()
+Este projeto foi hospedado na rede usando serviços da Vercel e você pode acessar por [aqui](https://sccon-teste-zeta.vercel.app/)
 
+
+# Desenvolvimento e desafios encontrados
+- Como utilizei uma versão mais recente do Angular (Versões Angular 16+) e o enunciado menciona o uso de Módulos, não saberia dizer se era necessario seguir com o desenvolvimento nas práticas mais recentes desta versão sem a utlização deles, pois utilizamos componentes standalone sem necessidade de módulos. Mas por via das dúvidas, decidi seguir com o enunciado forçando a utilização dos módulos
+- Nunca havia utilizado Mocky (Atualmente o site está desabilitado) e nenhum serviço de mock para simular persistência de dados. Procurei estudar sobre durante o desenvolvimento deste projeto porém como há uma deadline para a entrega, decidir usar o caminho do localStorage que foi permitido no enunciado.
+- Não tenho muito domínio com animações mas isso não me privou de implementar algumas ações nos componentes desenvolvidos. Para isso, usei algumas estratégias que eu havia usado em projetos mais antigos quando eu estava estudando esse módulo do CSS
+- Confesso que não sou muito bom em decorar código e fiz várias pesquisas para me relembrar de sintaxes por exemplo. Sei da existência de técnicas e mecanismos para o desenvolvimento e o tempo todo me conti somente em pesquisar em como reproduzir a técnica, a lógica foi toda minha. um exemplo é o desenvolvimento da diretiva de CEP. Precisei pesquisar para me lembrar de como se desenvolve uma diretiva e usei o [regex101](https://regex101.com) para encontrar a lógica correta.
+- Tomei a liberdade para ir um pouco além do que o anunciado menciona e decidi fazer uma hospedagem usando Vercel para acesso livre ao projeto. Permitindo uma simulação de um site hospedado e testes de performance com lighthouse por exemplo.
