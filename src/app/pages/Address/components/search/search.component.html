@@ -6,7 +6,7 @@
   }
   <div class="input-wrapper">
     <mat-form-field class="input" appearance="outline">
-      <input matInput placeholder="Busca por CEP:" formControlName="cep" cepMask (input)="removeError()">
+      <input matInput placeholder="Busca por CEP:" type="number" formControlName="cep" cepMask (input)="removeError()">
     </mat-form-field>
     <button class="button" matButton="outlined" [disabled]="loading() || searchForm.invalid || error()">Buscar</button>
   </div>
