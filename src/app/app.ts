@@ -2,8 +2,8 @@ import { Component, inject, Signal, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { MatCardContent, MatCardHeader, MatCardModule } from '@angular/material/card';
-import { CEP_SEARCH_REPOSITORY } from './facades/repositories/cep-search.repository';
-import { CepSearchService } from './facades/data-access/cep-search.service';
+import { CEP_SEARCH_REPOSITORY } from './services/repositories/cep-search.repository';
+import { CepSearchService } from './services/data-access/cep-search.service';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @Component({

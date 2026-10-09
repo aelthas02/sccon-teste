@@ -1,6 +1,6 @@
 import { Component, inject, Signal } from '@angular/core';
-import { CEP_SEARCH_REPOSITORY } from '../../../../facades/repositories/cep-search.repository';
-import { Address } from '../../../../facades/models/address.model';
+import { CEP_SEARCH_REPOSITORY } from '../../../../services/repositories/cep-search.repository';
+import { Address } from '../../../../services/models/address.model';
 import { MatTableModule } from '@angular/material/table';
 import { CommonModule, DatePipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';

@@ -4,7 +4,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { MatButton } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { CepMaskDirective } from '../../../../directives/cep-mask.directive';
-import { CEP_SEARCH_REPOSITORY } from '../../../../facades/repositories/cep-search.repository';
+import { CEP_SEARCH_REPOSITORY } from '../../../../services/repositories/cep-search.repository';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   imports: [

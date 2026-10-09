@@ -7,7 +7,7 @@ export const routes: Routes = [
   },
   {
     path: 'enderecos',
-    loadChildren: () => import('./pages/Cep/cep-module').then(m => m.CepModule)
+    loadChildren: () => import('./pages/Address/cep-module').then(m => m.CepModule)
   },
   {
     path: '**',
