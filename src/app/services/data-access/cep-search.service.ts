@@ -10,10 +10,10 @@ export class CepSearchService implements CepSearchRepository {
   private readonly http = inject(HttpClient);
   private readonly platformId = inject(PLATFORM_ID);
 
-  public _loading: WritableSignal<boolean> = signal<boolean>(false);
+  private _loading: WritableSignal<boolean> = signal<boolean>(false);
   public loading: Signal<boolean> = this._loading.asReadonly();
 
-  public _error: WritableSignal<boolean> = signal<boolean>(false);
+  private _error: WritableSignal<boolean> = signal<boolean>(false);
   public error: Signal<boolean> = this._error.asReadonly();
 
   private _addressList: WritableSignal<Address[]> = signal<Address[]>([]);
