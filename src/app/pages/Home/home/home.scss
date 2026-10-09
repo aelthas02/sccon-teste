@@ -20,3 +20,22 @@
     font-size: 14px;
   }
 }
+
+.list-content-open {
+  animation: open-list 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes open-list {
+  0% {
+    transform: translateY(-500px) scaleY(1);
+    transform-origin: top;
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+
+  100% {
+    transform: translateY(0) scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+}
