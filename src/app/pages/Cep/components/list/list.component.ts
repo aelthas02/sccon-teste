@@ -13,10 +13,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule
   ],
   selector: 'app-list',
-  styleUrl: './list.scss',
-  templateUrl: './list.html',
+  styleUrl: './list.component.scss',
+  templateUrl: './list.component.html',
 })
-export class List {
+export class ListComponent {
   private readonly cepSearchRepository = inject(CEP_SEARCH_REPOSITORY);
 
   public addressList: Signal<Address[]> = this.cepSearchRepository.addressList;

@@ -3,10 +3,14 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./pages/Home/home/home').then(c => c.Home)
+    loadChildren: () => import('./pages/Home/home-module').then(m => m.HomeModule)
   },
   {
     path: 'enderecos',
-    loadComponent: () => import('./pages/Cep/cep').then(c => c.Cep)
+    loadChildren: () => import('./pages/Cep/cep-module').then(m => m.CepModule)
   },
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];

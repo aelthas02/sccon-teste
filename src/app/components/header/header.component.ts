@@ -13,10 +13,10 @@ import { filter } from 'rxjs';
     MatIconModule
   ],
   selector: 'app-header',
-  styleUrl: './header.scss',
-  templateUrl: './header.html',
+  styleUrl: './header.component.scss',
+  templateUrl: './header.component.html',
 })
-export class Header {
+export class HeaderComponent {
   private readonly router = inject(Router);
 
   public showMenu: boolean = false;

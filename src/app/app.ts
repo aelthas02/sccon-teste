@@ -1,19 +1,19 @@
 import { Component, inject, Signal, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Header } from './components/header/header';
+import { HeaderComponent } from './components/header/header.component';
 import { MatCardContent, MatCardHeader, MatCardModule } from '@angular/material/card';
 import { CEP_SEARCH_REPOSITORY } from './facades/repositories/cep-search.repository';
 import { CepSearchService } from './facades/data-access/cep-search.service';
-import { Spinner } from './components/spinner/spinner';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @Component({
   imports: [
     RouterOutlet,
-    Header,
+    HeaderComponent,
     MatCardModule,
     MatCardHeader,
     MatCardContent,
-    Spinner
+    SpinnerComponent
   ],
   providers: [{
     provide: CEP_SEARCH_REPOSITORY,

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Cep } from './cep';
+import { CepComponent } from './cep.component';
 
 describe('Cep', () => {
-  let component: Cep;
-  let fixture: ComponentFixture<Cep>;
+  let component: CepComponent;
+  let fixture: ComponentFixture<CepComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Cep],
+      imports: [CepComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Cep);
+    fixture = TestBed.createComponent(CepComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

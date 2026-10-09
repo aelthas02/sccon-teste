@@ -3,7 +3,7 @@ import { MatError, MatInputModule } from '@angular/material/input';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
-import { CepMaskDirective } from '../../../../directives/cep-mask';
+import { CepMaskDirective } from '../../../../directives/cep-mask.directive';
 import { CEP_SEARCH_REPOSITORY } from '../../../../facades/repositories/cep-search.repository';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
@@ -17,10 +17,10 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
     MatError
   ],
   selector: 'app-search',
-  styleUrl: './search.scss',
-  templateUrl: './search.html',
+  styleUrl: './search.component.scss',
+  templateUrl: './search.component.html',
 })
-export class Search {
+export class SearchComponent {
   private readonly cepSearchRepository = inject(CEP_SEARCH_REPOSITORY);
   private readonly destroyRef = inject(DestroyRef);
 
