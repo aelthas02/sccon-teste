@@ -23,4 +23,9 @@
     color: styles.$dark-blue;
     margin-bottom: styles.$md;
   }
+
+  .button:disabled {
+    color: styles.$light-grey;
+    margin-bottom: styles.$md;
+  }
 }
